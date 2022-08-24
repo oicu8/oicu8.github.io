@@ -1,0 +1,135 @@
+// out: false
+.edit {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 12px;
+  background-color: #fff;
+  font-size: 1rem;
+  z-index: 99;
+  overflow: auto;
+  cursor: auto;
+  box-sizing: border-box;
+
+  &.preview-on {
+    background-color: #fafafa;
+  }
+
+  .editor-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    // margin and padding will cause problem.
+    .toolbar {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      color: #a7a1a1;
+      border: 1px solid #e3e3e3;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      user-select: none;
+
+      /* border: 1px solid #454545; */
+      .icon {
+        padding: 8px 14px;
+        cursor: pointer;
+
+        &:hover {
+          color: #73796d;
+        }
+
+        span {
+          font-weight: 800;
+        }
+
+        i {
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+
+  .react-codemirror2 {
+    width: 100%;
+    height: calc(~"100% - 48px");
+    // padding: 32px;
+    background-color: #fff;
+    // box-shadow: 0 1px 4px 1px #ececec;
+    font-size: 1.2rem;
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  .CodeMirror {
+    height: 100%;
+  }
+
+  .button-group {
+    position: fixed;
+    right: 32px;
+    top: 10px;
+    z-index: 52;
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: row;
+
+    .button {
+      border: none;
+      cursor: pointer;
+      margin: 8px 16px 0 0;
+    }
+  }
+
+  p.title {
+    font-weight: 600;
+  }
+
+  .topics-list,
+  .replies-list,
+  .mentions-list,
+  .feedback-list,
+  .config-list {
+    display: flex;
+    flex-direction: row;
+
+    .topic,
+    .reply,
+    .mention,
+    .feedback,
+    .config {
+      padding: 4px 6px;
+      background-color: #74a24b;
+      color: #fff;
+      margin-right: 4px;
+      border-radius: 2px;
+      cursor: pointer;
+      user-select: none;
+
+      &.hidden {
+        background: #8e8e8e;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 0;
+    font-size: 0.8rem;
+
+    .button-group {
+      top: 8px;
+      right: 8px;
+    }
+
+    .ReactCodeMirror {
+      padding: 12px;
+      padding-top: 64px;
+    }
+  }
+}

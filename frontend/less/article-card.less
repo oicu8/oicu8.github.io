@@ -1,0 +1,61 @@
+// out: false
+
+.article-card {
+  background-color: #fff;
+  padding: 32px, 48px;
+  width: 900px;
+  max-width: 100%;
+
+  .content {
+    line-height: 1.8rem;
+    word-wrap: break-word;
+
+    img {
+      max-width: 100%;
+      margin-bottom: 8px;
+    }
+
+    blockquote {
+      border-left: 0.25rem solid #dfe2e5;
+      padding-left: 12px;
+      margin-left: 0;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &:hover {
+    .actions-bottom-panel {
+      .share-btn {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 12px;
+    font-size: 0.8rem;
+  }
+}
+
+.article-panel {
+  .replies {
+    .feed-card.card {
+      margin-top: 1px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  .parent {
+    .feed-card.card {
+      margin-top: 24px;
+      margin-bottom: 0;
+    }
+  }
+}

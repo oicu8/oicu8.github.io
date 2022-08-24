@@ -1,0 +1,129 @@
+// out: false
+
+.card {
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1),
+    0 0 0 1px rgba(180, 180, 180, 0.1);
+  color: #4a4a4a;
+  max-width: 100%;
+  position: relative;
+  width: 580px;
+  max-width: 100%;
+  margin: 16px auto;
+  padding: 12px 24px 20px;
+  text-align: left;
+
+  .content-panel {
+    .cover {
+      width: 100%;
+      height: 126px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 2px;
+      margin-bottom: 14px;
+    }
+    .title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin: 0 0 6px 0;
+    }
+
+    // https://codepen.io/martinwolf/pen/qlFdp
+    .summary {
+      display: block; /* Fallback for non-webkit */
+      display: -webkit-box;
+      max-width: 100%;
+      max-height: 6.4rem; /* Fallback for non-webkit */
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.6rem;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      // word-break: break-all;
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .continue-reading-div {
+      margin-top: 6px;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      .continue-reading-btn {
+        padding: 0;
+        border-radius: 4px;
+        color: #08c;
+        display: inline-block;
+        font-size: 0.8rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .lifechain-media {
+      margin-bottom: 16px;
+
+      &[data-media-type="youtube"] iframe,
+      &[data-media-type="vimeo"] iframe,
+      &[data-media-type="vine"] iframe,
+      &[data-media-type="mp4"] video,
+      &[data-media-type="ogg"] video,
+      &[data-media-type="webm"] video {
+        height: 246px;
+      }
+
+      &[data-media-type="bilibili"] iframe {
+        height: 360px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 6px;
+
+    .content-panel {
+      .summary {
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+        max-height: 3.6rem;
+      }
+    }
+
+    .images-panel {
+      padding: 6px;
+    }
+  }
+}
+
+.feed-card {
+  &:hover {
+    cursor: pointer;
+    background-color: #fbfff7;
+
+    .actions-bottom-panel {
+      .share-btn {
+        display: block;
+      }
+    }
+  }
+
+  .parent {
+    .feed-card {
+      box-shadow: none;
+      border: 1px solid #d1d4ce;
+      border-radius: 6px;
+
+      &:hover {
+        background-color: darken(#fbfff7, 1%);
+      }
+    }
+  }
+}

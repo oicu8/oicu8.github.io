@@ -1,0 +1,82 @@
+// out: false
+
+.actions-bottom-panel {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: row;
+
+  .left-btn-group,
+  .right-btn-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .right-btn-group {
+    justify-content: flex-end;
+  }
+
+  .btn {
+    margin-right: 28px;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    &.upvote-btn,
+    &.downvote-btn {
+      padding: 6px 10px;
+      background-color: #dff1cf;
+      color: #74a24b;
+      border-radius: 2px;
+      margin-right: 6px;
+      max-width: 50px;
+
+      &:hover {
+        background-color: darken(#dff1cf, 8%);
+      }
+
+      i {
+        margin: 0;
+      }
+
+      span {
+        margin-left: 4px;
+        font-family: "Helvetica Neue", arial, sans-serif !important;
+        font-weight: 400;
+      }
+    }
+
+    &.downvote-btn {
+      margin-right: 28px;
+    }
+
+    &.reply-btn,
+    &.donate-btn {
+      color: rgb(133, 144, 166);
+
+      &:hover {
+        color: darken(rgb(133, 144, 166), 10%);
+      }
+    }
+  }
+
+  .share-btn {
+    display: none;
+    margin: 0;
+    color: #c2cad8;
+
+    &:hover {
+      color: darken(rgb(133, 144, 166), 10%);
+    }
+  }
+
+  .earnings {
+    font-size: 0.9rem;
+    color: #8590a6;
+    margin-left: 12px;
+  }
+
+  i {
+    margin-right: 6px;
+  }
+}
